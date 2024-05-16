@@ -1,0 +1,325 @@
+﻿/*@!Encoding:65001*/
+includes
+{
+
+}
+
+variables
+{
+  char arr[200]="\0";
+  const ARRAY_SIZE = 200;
+  const BUTTON_PRESSED =1;
+  const BUTTON_NOT_PRESSED =0;
+  char OutputArr[ARRAY_SIZE]="";
+  char Flag = 0;
+  char Operation=0;
+  int First_operand=0;
+  int Second_operand=0;
+  int Result=0;
+}
+on sysvar Calculator::Display::Button_1
+{
+  if(@Calculator::Display::Button_1 == BUTTON_PRESSED)
+  {
+    sysGetVariableString(sysvar::Calculator::Display::outputBox,OutputArr,ARRAY_SIZE);
+    strncat(OutputArr,"1",ARRAY_SIZE);
+    sysSetVariableString(sysvar::Calculator::Display::outputBox,OutputArr);
+    
+    if(Flag==0)
+    {
+      First_operand*=10;
+      First_operand+=1;
+    }
+    else if (Flag==1)
+    {
+      Second_operand*=10;
+      Second_operand+=1;
+    }
+  }
+  
+}
+
+on sysvar Calculator::Display::Button_2
+{
+  if(@Calculator::Display::Button_2 == BUTTON_PRESSED)
+  {
+    sysGetVariableString(sysvar::Calculator::Display::outputBox,OutputArr,ARRAY_SIZE);
+    strncat(OutputArr,"2",ARRAY_SIZE);
+    sysSetVariableString(sysvar::Calculator::Display::outputBox,OutputArr);
+    
+    if(Flag==0)
+    {
+      First_operand*=10;
+      First_operand+=2;
+    }
+    else if (Flag==1)
+    {
+      Second_operand*=10;
+      Second_operand+=2;
+    }
+  }
+}
+on sysvar Calculator::Display::Button_3
+{
+  if(@Calculator::Display::Button_3 == BUTTON_PRESSED)
+  {
+    sysGetVariableString(sysvar::Calculator::Display::outputBox,OutputArr,ARRAY_SIZE);
+    strncat(OutputArr,"3",ARRAY_SIZE);
+    sysSetVariableString(sysvar::Calculator::Display::outputBox,OutputArr);
+    if(Flag==0)
+    {
+      First_operand*=10;
+      First_operand+=3;
+    }
+    else if (Flag==1)
+    {
+      Second_operand*=10;
+      Second_operand+=3;
+    }
+  }
+}
+
+on sysvar Calculator::Display::Button_4
+{
+  if(@Calculator::Display::Button_4 == BUTTON_PRESSED)
+  {
+    sysGetVariableString(sysvar::Calculator::Display::outputBox,OutputArr,ARRAY_SIZE);
+    strncat(OutputArr,"4",ARRAY_SIZE);
+    sysSetVariableString(sysvar::Calculator::Display::outputBox,OutputArr);
+    if(Flag==0)
+    {
+      First_operand*=10;
+      First_operand+=4;
+    }
+    else if (Flag==1)
+    {
+      Second_operand*=10;
+      Second_operand+=4;
+    }
+  }
+}
+on sysvar Calculator::Display::Button_5
+{
+  if(@Calculator::Display::Button_5 == BUTTON_PRESSED)
+  {
+    sysGetVariableString(sysvar::Calculator::Display::outputBox,OutputArr,ARRAY_SIZE);
+    strncat(OutputArr,"5",ARRAY_SIZE);
+    sysSetVariableString(sysvar::Calculator::Display::outputBox,OutputArr);
+    if(Flag==0)
+    {
+      First_operand*=10;
+      First_operand+=5;
+    }
+    else if (Flag==1)
+    {
+      Second_operand*=10;
+      Second_operand+=5;
+    }
+  }
+}
+on sysvar Calculator::Display::Button_6
+{
+  if(@Calculator::Display::Button_6 == BUTTON_PRESSED)
+  {
+    sysGetVariableString(sysvar::Calculator::Display::outputBox,OutputArr,ARRAY_SIZE);
+    strncat(OutputArr,"6",ARRAY_SIZE);
+    sysSetVariableString(sysvar::Calculator::Display::outputBox,OutputArr);
+    if(Flag==0)
+    {
+      First_operand*=10;
+      First_operand+=6;
+    }
+    else if (Flag==1)
+    {
+      Second_operand*=10;
+      Second_operand+=6;
+    }
+  }
+}
+on sysvar Calculator::Display::Button_7
+{
+  if(@Calculator::Display::Button_7 == BUTTON_PRESSED)
+  {
+    sysGetVariableString(sysvar::Calculator::Display::outputBox,OutputArr,ARRAY_SIZE);
+    strncat(OutputArr,"7",ARRAY_SIZE);
+    sysSetVariableString(sysvar::Calculator::Display::outputBox,OutputArr);
+    if(Flag==0)
+    {
+      First_operand*=10;
+      First_operand+=7;
+    }
+    else if (Flag==1)
+    {
+      Second_operand*=10;
+      Second_operand+=7;
+    }
+  }
+}
+on sysvar Calculator::Display::Button_8
+{
+  if(@Calculator::Display::Button_8 == BUTTON_PRESSED)
+  {
+    sysGetVariableString(sysvar::Calculator::Display::outputBox,OutputArr,ARRAY_SIZE);
+    strncat(OutputArr,"8",ARRAY_SIZE);
+    sysSetVariableString(sysvar::Calculator::Display::outputBox,OutputArr);
+    if(Flag==0)
+    {
+      First_operand*=10;
+      First_operand+=8;
+    }
+    else if (Flag==1)
+    {
+      Second_operand*=10;
+      Second_operand+=8;
+    }
+  }
+}
+on sysvar Calculator::Display::Button_9
+{
+  if(@Calculator::Display::Button_9 == BUTTON_PRESSED)
+  {
+    sysGetVariableString(sysvar::Calculator::Display::outputBox,OutputArr,ARRAY_SIZE);
+    strncat(OutputArr,"9",ARRAY_SIZE);
+    sysSetVariableString(sysvar::Calculator::Display::outputBox,OutputArr);
+    if(Flag==0)
+    {
+      First_operand*=10;
+      First_operand+=9;
+    }
+    else if (Flag==1)
+    {
+      Second_operand*=10;
+      Second_operand+=9;
+    }
+  }
+}
+on sysvar Calculator::Display::Button_0
+{
+  if(@Calculator::Display::Button_0 == BUTTON_PRESSED)
+  {
+    sysGetVariableString(sysvar::Calculator::Display::outputBox,OutputArr,ARRAY_SIZE);
+    strncat(OutputArr,"0",ARRAY_SIZE);
+    sysSetVariableString(sysvar::Calculator::Display::outputBox,OutputArr);
+    if(Flag==0)
+    {
+      First_operand*=10;
+      First_operand+=0;
+    }
+    else if (Flag==1)
+    {
+      Second_operand*=10;
+      Second_operand+=0;
+    }
+  }
+}
+
+on sysvar Calculator::Display::Button_Addition
+{
+  if(@Calculator::Display::Button_Addition == BUTTON_PRESSED)
+  {
+    Flag=1;
+    Operation=1;
+    sysGetVariableString(sysvar::Calculator::Display::outputBox,OutputArr,ARRAY_SIZE);
+    strncat(OutputArr,"+",ARRAY_SIZE);
+    sysSetVariableString(sysvar::Calculator::Display::outputBox,OutputArr);
+  }
+}
+on sysvar Calculator::Display::Button_Subtraction
+{
+  if(@Calculator::Display::Button_Subtraction == BUTTON_PRESSED)
+  {
+    Flag=1;
+    Operation=2;
+    sysGetVariableString(sysvar::Calculator::Display::outputBox,OutputArr,ARRAY_SIZE);
+    strncat(OutputArr,"-",ARRAY_SIZE);
+    sysSetVariableString(sysvar::Calculator::Display::outputBox,OutputArr);
+  }
+}
+on sysvar Calculator::Display::Button_Multiplication
+{
+  if(@Calculator::Display::Button_Multiplication == BUTTON_PRESSED)
+  {
+    Flag=1;
+    Operation=3;
+    sysGetVariableString(sysvar::Calculator::Display::outputBox,OutputArr,ARRAY_SIZE);
+    strncat(OutputArr,"*",ARRAY_SIZE);
+    sysSetVariableString(sysvar::Calculator::Display::outputBox,OutputArr);
+  }
+}
+on sysvar Calculator::Display::Button_Division
+{
+  if(@Calculator::Display::Button_Division == BUTTON_PRESSED)
+  {
+    Flag=1;
+    Operation=4;
+    sysGetVariableString(sysvar::Calculator::Display::outputBox,OutputArr,ARRAY_SIZE);
+    strncat(OutputArr,"/",ARRAY_SIZE);
+    sysSetVariableString(sysvar::Calculator::Display::outputBox,OutputArr);
+  }
+}
+
+
+on sysvar Calculator::Display::Button_Clear
+{
+  if(@Calculator::Display::Button_Clear == BUTTON_PRESSED)
+  {
+    Flag=0;
+    First_operand=0;
+    Second_operand=0;
+    Result=0;
+    mbstrncpy(OutputArr,"",200);
+    sysSetVariableString(sysvar::Calculator::Display::outputBox,OutputArr);
+  }
+}
+on sysvar Calculator::Display::button_Equal
+{
+  if(@Calculator::Display::button_Equal == BUTTON_PRESSED)
+  {
+    switch(Operation)
+    {
+      case 1:
+        Result=First_operand+Second_operand;
+        snprintf(OutputArr,ARRAY_SIZE,"%d",Result);
+        sysSetVariableString(sysvar::Calculator::Display::outputBox,OutputArr);
+        break;
+        
+       case 2:
+        Result=First_operand-Second_operand;
+        snprintf(OutputArr,ARRAY_SIZE,"%d",Result);
+        sysSetVariableString(sysvar::Calculator::Display::outputBox,OutputArr);
+        break;
+         
+       case 3:
+        Result=First_operand*Second_operand;
+        snprintf(OutputArr,ARRAY_SIZE,"%d",Result);
+        sysSetVariableString(sysvar::Calculator::Display::outputBox,OutputArr);
+        break;
+         
+       case 4:
+         if(Second_operand == 0)
+         {
+           sysSetVariableString(sysvar::Calculator::Display::outputBox,"Invalid Operation");
+         }
+         else
+         {
+           Result=First_operand/Second_operand;
+           snprintf(OutputArr,ARRAY_SIZE,"%d",Result);
+           sysSetVariableString(sysvar::Calculator::Display::outputBox,OutputArr);
+         }
+        break;
+         
+       case 5:
+        Result=First_operand%Second_operand;
+        snprintf(OutputArr,ARRAY_SIZE,"%d",Result);
+        sysSetVariableString(sysvar::Calculator::Display::outputBox,OutputArr);
+        break;
+         
+      default:
+         sysSetVariableString(sysvar::Calculator::Display::outputBox,"Invalid Operation");
+         break;
+    }
+   
+  }
+  
+  
+}
